@@ -1,15 +1,15 @@
 import type { ProductDisplayProps } from "../../types";
 
 
-function ProductDisplay({product, }: ProductDisplayProps) {
+function ProductDisplay({product, showDescription, showStockStatus, onAddToCart, children}: ProductDisplayProps) {
     return (
         <div>
             <h1>Product Information</h1>
             <p>{product.name}</p>
             <p>{product.price}</p>
-            <p>{product.description}</p>
-            <p>{product.imageUrl}</p>
-            <p>In stock: {product.inStock}</p>
+            <p>{showDescription? product.description : ""}</p>
+            <p>{showStockStatus ? "In Stock" : ""}</p>
+            <button onClick={() => onAddToCart?.(product.id)}>Add to Cart</button>
             <p></p>
         </div>
     )

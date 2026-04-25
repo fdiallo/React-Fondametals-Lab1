@@ -40,3 +40,4 @@ export interface ProductDisplayProps {
   onAddToCart?: (productId: string) => void;
   children?: React.ReactNode;
 }
+
