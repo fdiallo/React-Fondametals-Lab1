@@ -1,6 +1,9 @@
 
 export type AlertType = 'success' | 'error' | 'warning' | 'info';
- 
+
+/**
+ * Defining the interfaces 
+ */
 export interface AlertBoxProps {
   type: AlertType;
   message: string;
@@ -15,7 +18,7 @@ export interface User {
   role: string;
   avatarUrl?: string;
 }
- 
+
 export interface UserProfileCardProps {
   user: User;
   showEmail?: boolean;
@@ -32,7 +35,7 @@ export interface Product {
   imageUrl?: string;
   inStock: boolean;
 }
- 
+
 export interface ProductDisplayProps {
   product: Product;
   showDescription?: boolean;
@@ -40,4 +43,3 @@ export interface ProductDisplayProps {
   onAddToCart?: (productId: string) => void;
   children?: React.ReactNode;
 }
-

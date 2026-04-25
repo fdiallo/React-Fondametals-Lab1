@@ -3,6 +3,9 @@ import AlertBox from './components/AlertBox/AlertBox'
 import ProductDisplay from './components/ProductDisplay/ProductDisplay';
 import UserProfileCard from './components/UserProfileCard/UserProfileCard'
 
+/**
+ * Component Composition Example
+ */
 function App() {
 
   const user = {
@@ -24,12 +27,12 @@ function App() {
 
   const [showAlert, setShowAlert] = useState(false);
   const [cartItems, setCartItems] = useState<string[]>([]);
- 
+
   const handleAddToCart = (productId: string) => {
     setCartItems([...cartItems, productId]);
     setShowAlert(true);
   };
- 
+
   return (
     <div className="p-4">
       {showAlert && (
@@ -39,7 +42,7 @@ function App() {
           onClose={() => setShowAlert(false)}
         />
       )}
- 
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
         <UserProfileCard
           user={user}
@@ -47,7 +50,7 @@ function App() {
           showRole={true}
           onEdit={(userId) => alert(`Editing user ${userId}`)}
         />
- 
+
         <ProductDisplay
           product={product}
           showDescription={true}
