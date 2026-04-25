@@ -8,7 +8,7 @@ function UserProfileCard({user, showEmail, showRole, onEdit, children}: UserProf
             <p>{user.name}</p>
             <p>{showEmail? user.email : ""}</p>
             <p>{showRole? user.role : ""}</p>
-            <p>{user.avatarUrl}</p>
+            {/* <img src="{user.avatarUrl}" alt="Avatar" width={20} height={20}/> */}
             <button onClick={() => onEdit?.(user.id)}>Edit Profile</button>
             {children}
         </div>
